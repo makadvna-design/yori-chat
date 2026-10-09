@@ -2,13 +2,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import { getFirestore, doc, setDoc, getDoc, collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "yori-app.firebaseapp.com",
-  projectId: "yori-app",
-  storageBucket: "yori-app.appspot.com",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abcdef"
+  apiKey: "AIzaSyBD8wPkiO3FN3r6RIUTII5LAXbz2sCPSFc",
+  authDomain: "social-chat-395a7.firebaseapp.com",
+  projectId: "social-chat-395a7",
+  storageBucket: "social-chat-395a7.firebasestorage.app",
+  messagingSenderId: "557779904939",
+  appId: "1:557779904939:web:54e7ac9367c19a7de58aee",
+  measurementId: "G-KLCJ97KF5T"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
