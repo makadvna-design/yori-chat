@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ЁРӢ — Social Network</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Болои саҳифа (Header) -->
+  <header class="app-header">
+    <div class="brand-logo">
+      <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+      <span>ЁРӢ</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+    </div>
+  </header>
+
+  <!-- Бахшҳои асосӣ (Tabs) -->
+  <main class="main-container">
+    
+    <!-- 1. ЛЕНТАИ ПОСТҲО -->
+    <section id="feedTab" class="tab-pane active">
+      <div class="story-container">
+        <div class="story-card add-story">
+          <i class="fa-solid fa-plus"></i>
+          <span>Илова</span>
+        </div>
+      </div>
+      <div id="postsFeed" class="feed-list"></div>
+    </section>
+
+    <!-- 2. ЧАТҲО ВА ДӮСТОН -->
+    <section id="chatsTab" class="tab-pane">
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="phoneSearchInput" placeholder="Ҷустуҷӯ бо рақами телефон...">
+        <button id="searchUserBtn"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="section-title">Чатҳои фаъол</div>
+      <div id="chatsList" class="chats-list"></div>
+    </section>
+
+    <!-- 3. НАШРИ ПОСТИ НАВ -->
+    <section id="createTab" class="tab-pane">
+      <div class="glass-card">
+        <h3>Пасти нав созед</h3>
+        <textarea id="newPostContent" placeholder="Чӣ хабар доред? Ба ҳамсояҳо нақл кунед..."></textarea>
+        <div class="upload-box" onclick="document.getElementById('postImgFile').click()">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>Илова кардани акс</span>
+          <input type="file" id="postImgFile" accept="image/*" hidden>
+        </div>
+        <button id="publishBtn" class="glow-btn">Нашр кардан</button>
+      </div>
+    </section>
+
+    <!-- 4. ПРОФИЛИ КОРБАР -->
+    <section id="profileTab" class="tab-pane">
+      <div class="glass-card profile-card">
+        <div class="avatar-container">
+          <img id="myAvatar" src="https://ui-avatars.com/api/?name=User&background=f43f5e&color=fff" alt="Avatar">
+          <label for="avatarFile" class="edit-badge"><i class="fa-solid fa-camera"></i></label>
+          <input type="file" id="avatarFile" accept="image/*" hidden>
+        </div>
+
+        <div class="input-field">
+          <label>Ном ва Насаб</label>
+          <input type="text" id="profName" placeholder="Номи шумо">
+        </div>
+
+        <div class="input-field">
+          <label>Рақами телефон</label>
+          <input type="text" id="profPhone" disabled class="disabled-input">
+        </div>
+
+        <div class="input-field">
+          <label>Дар бораи ман</label>
+          <input type="text" id="profBio" placeholder="Статуси шумо">
+        </div>
+
+        <button id="saveProfBtn" class="glow-btn"><i class="fa-solid fa-check"></i> Сабт кардан</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Модали Чат (Равзанаи суҳбати инфиродӣ) -->
+  <div id="chatModal" class="chat-modal">
+    <div class="chat-header">
+      <button id="closeChat"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="chat-user-info">
+        <h4 id="chatPartnerName">Корбар</h4>
+        <small id="chatPartnerStatus">онлайн</small>
+      </div>
+    </div>
+    <div id="messagesContainer" class="messages-container"></div>
+    <div class="chat-input-area">
+      <input type="text" id="msgInput" placeholder="Паём фиристед...">
+      <button id="sendMsg"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Навигатсияи Поёнӣ (Bottom Navigation) -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="feedTab"><i class="fa-solid fa-layer-group"></i><span>Лента</span></button>
+    <button class="nav-item" data-tab="chatsTab"><i class="fa-solid fa-comment-dots"></i><span>Чатҳо</span></button>
+    <button class="nav-item" data-tab="createTab"><i class="fa-solid fa-circle-plus"></i><span>Сохтан</span></button>
+    <button class="nav-item" data-tab="profileTab"><i class="fa-solid fa-user"></i><span>Профил</span></button>
+  </nav>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
